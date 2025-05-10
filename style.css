@@ -1,0 +1,209 @@
+:root {
+  --bg: #fdfcfb;
+  --text: #1e1e1e;
+  --card: #ffffff;
+  --accent: #2e86de;
+  --muted: #999;
+}
+
+body.dark {
+  --bg: #181818;
+  --text: #f2f2f2;
+  --card: #222;
+  --accent: #4aa3ff;
+  --muted: #888;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Merriweather', serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: var(--card);
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar h1 {
+  font-size: 1.4em;
+  margin: 0;
+}
+
+.toggle-mode {
+  background: none;
+  border: 1px solid var(--text);
+  padding: 8px 12px;
+  border-radius: 5px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.toggle-mode:hover {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(135deg, #1d2b64, #f8cdda);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05), transparent 40%),
+              radial-gradient(circle at 70% 70%, rgba(255,255,255,0.04), transparent 40%);
+  animation: moveBg 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveBg {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50%, -50%); }
+}
+
+.hero-overlay {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 60px 30px;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 1.2s ease-out;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 3em;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.hero-subtitle {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.btn-start {
+  background-color: var(--accent);
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-start:hover {
+  background-color: darkorange;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 700px;
+  margin: 60px auto;
+  background-color: var(--card);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.chapter-list {
+  list-style: none;
+  padding: 0;
+}
+
+.chapter-list li {
+  margin: 15px 0;
+  font-size: 1.1em;
+}
+
+.chapter-list a {
+  text-decoration: none;
+  color: var(--accent);
+  transition: color 0.2s;
+}
+
+.chapter-list a:hover {
+  color: darkorange;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--muted);
+  font-size: 0.9em;
+}
+
+/* FADE IN */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+/* Background modern untuk halaman bab */
+.bab-body {
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.bab-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+}
+
+.bab-content {
+  background-color: rgba(255, 255, 255, 0.88);
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 800px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  font-size: 1.1em;
+  line-height: 1.8;
+  animation: fadeIn 1s ease-out;
+}
+
+.back-link {
+  display: block;
+  margin-top: 40px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: darkorange;
+}
